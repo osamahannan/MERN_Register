@@ -1,8 +1,9 @@
+const dotenv = require('dotenv'); 
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 
-const DB= 'mongodb+srv://carnage:jarvis786@cluster0.7nxgl.mongodb.net/mernstack?retryWrites=true&w=majority'
+const DB= 'mongodb+srv://carnage:yourpassword@cluster0.7nxgl.mongodb.net/mernstack?retryWrites=true&w=majority'
 
 mongoose.connect(DB, {
     useNewUrlParser: true,
