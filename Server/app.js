@@ -1,23 +1,11 @@
 const dotenv = require('dotenv'); 
-const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 
 dotenv.config({ path:'./config.env'});
-
-const DB = process.env.DATABASE; 
+ 
 const PORT = process.env.PORT;
-
-mongoose.connect(DB, {
-    useNewUrlParser: true,
-    useCreateIndex:true,
-    useUnifiedTopology: true,
-    useFindAndModify: false
-}).then(() => {
-    console.log('connection successful');
-}).catch((e) => {
-    console.log('no connection')
-});
+require('./db/conn');
 
 // middelware
 
