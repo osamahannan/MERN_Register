@@ -4,11 +4,12 @@ const app = express();
 
 dotenv.config({ path:'./config.env'});
  
-const PORT = process.env.PORT;
 require('./db/conn');
+// const User = require('./model/userSchema');
+
+const PORT = process.env.PORT;
 
 // middelware
-
 const middelware = (req, res, next) => {
     console.log('hello my middelware')
     next();
