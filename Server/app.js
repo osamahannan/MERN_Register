@@ -3,7 +3,10 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 
-const DB= 'mongodb+srv://carnage:yourpassword@cluster0.7nxgl.mongodb.net/mernstack?retryWrites=true&w=majority'
+dotenv.config({ path:'./config.env'});
+
+const DB = process.env.DATABASE; 
+const PORT = process.env.PORT;
 
 mongoose.connect(DB, {
     useNewUrlParser: true,
@@ -43,6 +46,6 @@ app.get('/signup', (req, res)=> {
     res.send("This is SignUp page");
 })
 
-app.listen(3000, () => {
-    console.log('server is running at port 3000');
+app.listen(PORT, () => {
+    console.log(`server is running at port ${PORT}`);
 })
