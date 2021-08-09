@@ -8,7 +8,8 @@ router.get('/', (req, res)=> {
     res.send("This is Home Page from router js");
 })
 
-router.post('/register', (req, res) => {
+
+router.post('/register', async (req, res) => {
 
     const {name, email, phone, work, password, cpassword} = req.body;
 
@@ -16,21 +17,23 @@ router.post('/register', (req, res) => {
         return res.status(422).json({error: "please fill all the fields"})
     }
 
-    User.findOne({email:email})
-    .then((userExist) => {
+    try {
+        const userExist = await User.findOne({email:email})
+        
         if(userExist) {
             return res.status(422).json({error: "email already exist"})
         }
 
         const user = new User({name, email, phone, work, password, cpassword})
 
-        user.save().then(() => {
-            res.status(201).json({message: "user registerd successfully"})
-        }).catch((err) => {
-            res.status(500).json({error: "failed to register"})
-        });
+        await user.save();
+        res.status(201).json({message: "user registerd successfully"})
 
-    }).catch(err => { console.log(err)});
+    }
+    catch (err) {
+        console.log(err);
+    }
+    
 })
 
 module.exports = router;
