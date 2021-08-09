@@ -2,22 +2,23 @@ const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
 
+// middelwares
 dotenv.config({ path:'./config.env'});
- 
 require('./db/conn');
+app.use(express.json());
 // const User = require('./model/userSchema');
-
 const PORT = process.env.PORT;
+app.use(require('./router/auth'));
 
-// middelware
+
 const middelware = (req, res, next) => {
     console.log('hello my middelware')
     next();
 }
 
-app.get('/', (req, res)=> {
-    res.send("This is Home Page");
-})
+// app.get('/', (req, res)=> {
+//     res.send("This is Home Page");
+// })
 
 app.get('/about', middelware, (req, res)=> {
     res.send("This is About Page");
