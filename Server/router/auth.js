@@ -19,6 +19,7 @@ router.post('/register', async (req, res) => {
 
     try {
         const userExist = await User.findOne({email:email})
+
         
         if(userExist) {
             return res.status(422).json({error: "email already exist"})
@@ -34,6 +35,29 @@ router.post('/register', async (req, res) => {
         console.log(err);
     }
     
+})
+
+router.post('/signin', async (req, res) => {
+    
+    try {
+        const {email, password} = req.body;
+
+        if(!email || !password) {
+            return res.status(400).json({error: "please fill all the details"})
+        }
+
+        const userLogin = await User.findOne({email:email});
+        console.log(userLogin);
+
+        if(!userLogin) {
+            res.status(400).json({error: "user error"})
+        } else {
+            res.json({message: "user login successful"})
+        }
+
+    } catch (err) {
+        console.log(err);
+    }
 })
 
 module.exports = router;
