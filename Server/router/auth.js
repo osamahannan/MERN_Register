@@ -8,7 +8,7 @@ router.get('/', (req, res)=> {
     res.send("This is Home Page from router js");
 })
 
-
+// Register
 router.post('/register', async (req, res) => {
 
     const {name, email, phone, work, password, cpassword} = req.body;
@@ -22,13 +22,20 @@ router.post('/register', async (req, res) => {
 
         
         if(userExist) {
+
             return res.status(422).json({error: "email already exist"})
+
+        } else if(password != cpassword) {
+
+            return res.status(422).json({error: "password not matched"})
+
+        } else {
+
+            const user = new User({name, email, phone, work, password, cpassword})
+    
+            await user.save();
+            res.status(201).json({message: "user registerd successfully"})
         }
-
-        const user = new User({name, email, phone, work, password, cpassword})
-
-        await user.save();
-        res.status(201).json({message: "user registerd successfully"})
 
     }
     catch (err) {
@@ -37,6 +44,7 @@ router.post('/register', async (req, res) => {
     
 })
 
+//logIn
 router.post('/signin', async (req, res) => {
     
     try {
