@@ -28,7 +28,7 @@ app.get('/contact', (req, res)=> {
     res.send("This Contact Page");
 })
 
-app.get('/login', (req, res)=> {
+app.get('/signin', (req, res)=> {
     res.send("This is Login Page");
 })
 
