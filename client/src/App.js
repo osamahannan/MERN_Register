@@ -1,4 +1,5 @@
 import './index.css';
+import { Route } from 'react-router-dom';
 import Nav from "./Components/Nav";
 import Home from "./Components/Home";
 import Contact from "./Components/Contact";
@@ -11,6 +12,26 @@ function App() {
     <div className="App">
       <>
         <Nav/>
+
+        <Route exact path= "/">
+          <Home />
+        </Route>
+
+        <Route path= "/About">
+          <About />
+        </Route>
+
+        <Route path= "/contact">
+          <Contact />
+        </Route>
+
+        <Route path= "/signin">
+          <Signin />
+        </Route>
+
+        <Route path= "/register">
+          <Register />
+        </Route>
       </>
     </div>
   );
