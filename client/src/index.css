@@ -6,9 +6,9 @@
 .nav-bar{
   display: flex;
   padding: 10px;
-  border: 2px solid red;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(240, 243, 243);
 }
 
 ul {

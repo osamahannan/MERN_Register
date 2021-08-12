@@ -1,4 +1,4 @@
-import './index.css';
+import './index';
 import { Route } from 'react-router-dom';
 import Nav from "./Components/Nav";
 import Home from "./Components/Home";
@@ -32,6 +32,7 @@ function App() {
         <Route path= "/signup">
           <Signup />
         </Route>
+        
       </>
     </div>
   );
