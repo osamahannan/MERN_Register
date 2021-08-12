@@ -7,13 +7,15 @@
   display: flex;
   padding: 10px;
   border: 2px solid red;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
 }
 
 ul {
   display: flex;
   justify-content:center;
   align-items: center;
+  margin-right: 20px;
 }
 
 li {
@@ -29,5 +31,5 @@ ul li a {
 
 ul li a:hover {
   cursor: pointer;
-  color: skyblue
+  color: red;
 }

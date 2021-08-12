@@ -4,8 +4,8 @@ import Nav from "./Components/Nav";
 import Home from "./Components/Home";
 import Contact from "./Components/Contact";
 import About from "./Components/About";
-import Register from "./Components/Register";
-import Signin from "./Components/Signin";
+import Signup from "./Components/Signup";
+import Login from "./Components/Login";
 
 function App() {
   return (
@@ -25,12 +25,12 @@ function App() {
           <Contact />
         </Route>
 
-        <Route path= "/signin">
-          <Signin />
+        <Route path= "/login">
+          <Login />
         </Route>
 
-        <Route path= "/register">
-          <Register />
+        <Route path= "/signup">
+          <Signup />
         </Route>
       </>
     </div>
