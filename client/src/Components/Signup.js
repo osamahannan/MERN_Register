@@ -2,8 +2,13 @@ import React from 'react'
 
 const Signup = () => {
     return (
-        <div>
-            <h1>Signup Page</h1>
+        <div className= "register">
+            <div className= "register-form">
+                    ha bharo
+            </div>
+            <div className= "image">
+                    image
+            </div>
         </div>
     )
 }
