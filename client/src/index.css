@@ -44,6 +44,8 @@ ul li a:hover {
 /* Register page */
 .register {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 800px;
   height: 540px;
   margin: auto;
