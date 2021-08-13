@@ -50,7 +50,71 @@ ul li a:hover {
   height: 540px;
   margin: auto;
   margin-top: 60px;
-  background-color: rgb(241, 241, 243);
+  background-color: rgb(246, 246, 250);
   border-radius: 16px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.register-container h1 {
+  margin-bottom: 25px;
+}
+
+.form-group {
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  padding: 3px;
+}
+
+.form-group input {
+  padding-left: 10px;
+  border: none;
+  background-color: rgb(246, 246, 250);
+  outline: none;
+  width: 250px;
+  font-size: 16px;
+}
+
+.button {
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 25px;
+  background-color: rgb(43, 128, 238);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.signup-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-;
+  align-items: center;
+}
+
+.image {
+  width: 264px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.signup-link {
+  color: black;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  color: rgb(43, 128, 238);
 }
