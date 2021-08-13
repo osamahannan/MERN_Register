@@ -97,7 +97,7 @@ ul li a:hover {
   font-size: 17px;
 }
 
-.signup-image {
+.signup-image, .signin-image {
   display: flex;
   flex-direction: column;
   justify-content: space-;
@@ -110,11 +110,11 @@ ul li a:hover {
   margin-bottom: 20px;
 }
 
-.signup-link {
+.signup-link, .signin-link {
   color: black;
   text-decoration: none;
 }
 
-.signup-link:hover {
+.signup-link:hover, .signin-link:hover {
   color: rgb(43, 128, 238);
 }
