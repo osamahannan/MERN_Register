@@ -55,7 +55,7 @@ const Signup = () => {
             </div>
             <div className= "signup-image">
                 <figure>
-                    <img src={signpic} alt="signup-pic" className= "image"/>
+                    <img src={signpic} alt="signup-pic" className= "signimage"/>
                 </figure>
                 <Link to= "/login" className= "signup-link">Already a user ?</Link> 
             </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import signpic from '../assets/signup.png';
+import loginpic from '../assets/login.svg';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
@@ -8,13 +8,13 @@ const Login = () => {
 
             <div className="signin-image">
                 <figure>
-                    <img src={signpic} alt="signin-pic" className="image" />
+                    <img src={loginpic} alt="signin-pic" className="logimage" />
                 </figure>
                 <Link to="/signup" className="signin-link">Create an account ?</Link>
             </div>
 
             <div className="register-container">
-                <h1>Sign Up</h1>
+                <h1>Log In</h1>
 
                 <form className="register-form" id="register-form">
                     <div className="form-group">
@@ -34,7 +34,7 @@ const Login = () => {
                 </form>
 
                 <div className="button">
-                    <button type="submit" name="signin" id="signin" className="btn" value="register">Register</button>
+                    <button type="submit" name="signin" id="signin" className="btn" value="register">Log In</button>
                 </div>
 
             </div>
