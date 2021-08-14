@@ -150,13 +150,11 @@ ul li a:hover {
 .phone, .email, .address {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   margin-left: 15px;  
   padding: 0 5px;
 }
 
 .phone-info img, .email-info img, .address-info img {
-  border: 1px solid red;
   margin-left: 20px;
 }
 
