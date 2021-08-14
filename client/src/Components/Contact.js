@@ -2,8 +2,8 @@ import React from 'react'
 
 const Contact = () => {
     return (
-        <div className= "contact-main">
-            
+        <div className="contact-main">
+
             <div className="saved-detail">
 
                 <div className="phone-info">
@@ -33,8 +33,37 @@ const Contact = () => {
             </div>
 
             <div className="contact-form">
-                contact form here !
+
+                <div className="contact-heading">
+                    <h1>Get in touch</h1>
+                </div>
+
+                <div className="contact-detail">
+
+                    <div className="contact-name">
+                        <input type="text" id="conatct-form-name" className="conatct-form-name" placeholder="Your Name" required="true" />
+                    </div>
+
+                    <div className="contact-email">
+                        <input type="email" id="conatct-form-email" className="conatct-form-email" placeholder="Your Email" required="true" />
+                    </div>
+
+                    <div className="contact-phone">
+                        <input type="number" id="conatct-form-phone" className="conatct-form-phone" placeholder="Your Phone Number" required="true" />
+                    </div>
+
+                </div>
+
+                <div className="contact-text">
+                    <textarea className="contact-text-field" placeholder="Message" cols="30" rows="10"></textarea>
+                </div>
+
+                <div className="contact-button">
+                    <button type="submit" className="btn">Send Message</button>
+                </div>
+
             </div>
+
         </div>
     )
 }

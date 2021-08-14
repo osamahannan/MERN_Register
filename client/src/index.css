@@ -132,7 +132,7 @@ ul li a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .phone-info, .email-info, .address-info {
@@ -160,11 +160,53 @@ ul li a:hover {
 
 .contact-form {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   width: 850px;
-  height: 400px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 16px;
   background-color: rgb(246, 246, 250);
+  padding: 20px
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 20px 0 0 20px;
+}
+
+.conatct-form-name, .conatct-form-email, .conatct-form-phone {
+  display: flex;
+  margin-right: 20px;
+  width: 200px;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none ;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.contact-heading {
+  display: flex;
+  margin: 20px 0 15px 20px;
+}
+
+.contact-text {
+  display: flex;
+  margin: 20px 0 0 20px;
+}
+
+.contact-text-field {
+  background: none;
+  border-radius: 8px;
+  padding: 20px;
+  width: 47vw;
+  height: 15vh;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.contact-button {
+  margin: 20px;
 }
