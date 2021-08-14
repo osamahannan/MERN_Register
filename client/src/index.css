@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgb(232, 235, 235);
+  background-color: rgb(227, 236, 243);
 }
 
 .nav-bar{
@@ -209,4 +209,25 @@ ul li a:hover {
 
 .contact-button {
   margin: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh;
+  background: linear-gradient(to right, rgb(227, 236, 243) 50%,rgb(255, 255, 255) 50%);
+}
+
+.welcome {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(43, 128, 238);
+}
+
+.developer {
+  font-size: 2rem;
+  color: rgb(43, 43, 44);
+  font-weight: bold;
 }
