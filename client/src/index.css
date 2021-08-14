@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgb(227, 236, 243);
+  background-color: rgb(236, 241, 245);
 }
 
 .nav-bar{
@@ -154,8 +154,9 @@ ul li a:hover {
   padding: 0 5px;
 }
 
-.phone-info img, .email-info img, .address-info img {
-  margin-left: 20px;
+.contact-pic {
+  margin-left: 10px;
+  height: 30px;
 }
 
 .contact-form {
@@ -211,6 +212,7 @@ ul li a:hover {
   margin: 20px;
 }
 
+/* Home page */
 .container {
   display: flex;
   justify-content: center;

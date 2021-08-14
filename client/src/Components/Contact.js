@@ -1,4 +1,7 @@
 import React from 'react'
+import mobilepic from '../assets/mobile.png';
+import emailpic from '../assets/email2.png';
+import addresspic from '../assets/address.png';
 
 const Contact = () => {
     return (
@@ -7,7 +10,7 @@ const Contact = () => {
             <div className="saved-detail">
 
                 <div className="phone-info">
-                    <img src="#" alt="phone pic" />
+                    <img src={mobilepic} className= "contact-pic" alt="phone pic" />
 
                     <div className="phone">
                         <span>Phone</span>
@@ -15,7 +18,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="email-info">
-                    <img src="#" alt="email pic" />
+                    <img src={emailpic} className= "contact-pic" alt="email pic" />
 
                     <div className="email">
                         <span>Email</span>
@@ -23,7 +26,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="address-info">
-                    <img src="#" alt="address pic" />
+                    <img src={addresspic} className= "contact-pic" alt="address pic" />
 
                     <div className="address">
                         <span>Address</span>
