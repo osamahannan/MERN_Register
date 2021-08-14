@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgb(230, 233, 233);
+  background-color: rgb(232, 235, 235);
 }
 
 .nav-bar{
@@ -41,7 +41,7 @@ ul li a:hover {
   color: black;
 }
 
-/* Register page */
+/* Register page & Login page*/
 .register {
   display: flex;
   justify-content: space-evenly;
@@ -117,4 +117,50 @@ ul li a:hover {
 
 .signup-link:hover, .signin-link:hover {
   color: rgb(43, 128, 238);
+}
+
+/* Contact page */
+.contact-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.saved-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 2px solid black; */
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.phone-info, .email-info, .address-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 20px;
+  width: 340px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.phone, .email, .address {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 850px;
+  height: 400px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 16px;
+  background-color: rgb(246, 246, 250);
 }
