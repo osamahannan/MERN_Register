@@ -131,20 +131,18 @@ ul li a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border: 2px solid black; */
   padding: 10px;
   margin-bottom: 40px;
 }
 
 .phone-info, .email-info, .address-info {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  /* border: 1px solid red; */
   border-radius: 5px;
   padding: 10px 20px;
   margin: 20px;
-  width: 340px;
+  width: 380px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -152,6 +150,14 @@ ul li a:hover {
 .phone, .email, .address {
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
+  margin-left: 15px;  
+  padding: 0 5px;
+}
+
+.phone-info img, .email-info img, .address-info img {
+  border: 1px solid red;
+  margin-left: 20px;
 }
 
 .contact-form {
