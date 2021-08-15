@@ -19,16 +19,16 @@ const Login = () => {
                 <form className="register-form" id="register-form">
                     <div className="form-group">
                         <label htmlFor="name">
-                            <i class="zmdi zmdi-email"></i>
+                            <i className="zmdi zmdi-email"></i>
                         </label>
-                        <input type="email" name="email" id="email" autocomplete="off" placeholder="Your Email" />
+                        <input type="email" name="email" id="email" autoComplete="off" placeholder="Your Email" />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="password">
-                            <i class="zmdi zmdi-lock"></i>
+                            <i className="zmdi zmdi-lock"></i>
                         </label>
-                        <input type="password" name="password" id="password" autocomplete="off" placeholder="Your Password" />
+                        <input type="password" name="password" id="password" autoComplete="off" placeholder="Your Password" />
                     </div>
 
                 </form>

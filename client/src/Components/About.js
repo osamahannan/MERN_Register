@@ -9,11 +9,11 @@ const About = () => {
                 <img src={profilepic} alt="profile pic" />
 
                 <div className="form-group">
-                    <a href="#">Linked In</a>
-                    <a href="#">Github</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
+                    <a href="/#" target ="_blank" rel="noreferrer">Linked In</a>
+                    <a href="/#" target ="_blank" rel="noreferrer">Github</a>
+                    <a href="/#" target ="_blank" rel="noreferrer">Instagram</a>
+                    <a href="/#" target ="_blank" rel="noreferrer">Facebook</a>
+                    <a href="/  #" target ="_blank" rel="noreferrer">Twitter</a>
                 </div>
             </div>
 

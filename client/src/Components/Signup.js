@@ -11,39 +11,39 @@ const Signup = () => {
                 <form className= "register-form" id= "register-form">
                     <div className= "form-group">
                         <label htmlFor="name">
-                            <i class="zmdi zmdi-account"></i>   
+                            <i className="zmdi zmdi-account"></i>   
                         </label>
-                        <input type="text" name= "name" id= "name" autocomplete="off" placeholder="Your Name"/> 
+                        <input type="text" name= "name" id= "name" autoComplete="off" placeholder="Your Name"/> 
                     </div>
                     <div className= "form-group">
                         <label htmlFor="name">
-                            <i class="zmdi zmdi-email"></i>   
+                            <i className="zmdi zmdi-email"></i>   
                         </label>
-                        <input type="email" name= "email" id= "email" autocomplete="off" placeholder="Your Email"/> 
+                        <input type="email" name= "email" id= "email" autoComplete="off" placeholder="Your Email"/> 
                     </div>
                     <div className= "form-group">
                         <label htmlFor="phone">
-                            <i class="zmdi zmdi-phone-in-talk"></i>   
+                            <i className="zmdi zmdi-phone-in-talk"></i>   
                         </label>
-                        <input type="number" name= "phone" id= "phone" autocomplete="off" placeholder="Your Phone"/> 
+                        <input type="number" name= "phone" id= "phone" autoComplete="off" placeholder="Your Phone"/> 
                     </div>
                     <div className= "form-group">
                         <label htmlFor="work">
-                            <i class="zmdi zmdi-slideshow"></i>   
+                            <i className="zmdi zmdi-slideshow"></i>   
                         </label>
-                        <input type="text" name= "work" id= "work" autocomplete="off" placeholder="Your Profesion"/> 
+                        <input type="text" name= "work" id= "work" autoComplete="off" placeholder="Your Profesion"/> 
                     </div>
                     <div className= "form-group">
                         <label htmlFor="password">
-                            <i class="zmdi zmdi-lock-outline"></i>   
+                            <i className="zmdi zmdi-lock-outline"></i>   
                         </label>
-                        <input type="password" name= "password" id= "password" autocomplete="off" placeholder="Your Password"/> 
+                        <input type="password" name= "password" id= "password" autoComplete="off" placeholder="Your Password"/> 
                     </div>
                     <div className= "form-group">
                         <label htmlFor="cpassword">
-                            <i class="zmdi zmdi-lock"></i>   
+                            <i className="zmdi zmdi-lock"></i>   
                         </label>
-                        <input type="password" name= "cpassword" id= "cpassword" autocomplete="off" placeholder="Confirm your password"/> 
+                        <input type="password" name= "cpassword" id= "cpassword" autoComplete="off" placeholder="Confirm your password"/> 
                     </div>
                     
                 </form>
