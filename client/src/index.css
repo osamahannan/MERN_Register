@@ -7,15 +7,37 @@
 }
 
 body {
-  background-color: rgb(236, 241, 245);
+  background-color: rgb(227, 236, 243);
 }
 
+/* Nav bar */
 .nav-bar{
   display: flex;
   padding: 10px;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(240, 243, 243);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.nav-bar img {
+  height: 35px;
+  border-radius: 32px;
+  margin-right: 5px;
+}
+
+.car {
+  color: rgb(43, 43, 44);
+}
+
+.nage {
+  color: rgb(43, 128, 238);
 }
 
 ul {
@@ -33,7 +55,8 @@ li {
 
 ul li a {
   text-decoration: none;
-  color: grey;
+  color: rgb(28, 28, 54);
+  font-weight: bold;
 }
 
 ul li a:hover {
@@ -41,7 +64,15 @@ ul li a:hover {
   color: black;
 }
 
-/* Register page & Login page*/
+#signup-button {
+  background-color: rgb(43, 128, 238);
+  padding: 5px 10px;
+  border-radius: 7px;
+  color: white;
+}
+
+
+/* Register page & Login page */
 .register {
   display: flex;
   justify-content: space-evenly;
@@ -206,6 +237,7 @@ ul li a:hover {
   height: 15vh;
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
 }
 
 .contact-button {

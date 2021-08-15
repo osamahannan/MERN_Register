@@ -1,6 +1,6 @@
 import React from 'react'
 import mobilepic from '../assets/mobile.png';
-import emailpic from '../assets/email2.png';
+import emailpic from '../assets/email.png';
 import addresspic from '../assets/address.png';
 
 const Contact = () => {
