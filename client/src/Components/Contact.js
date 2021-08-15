@@ -44,15 +44,15 @@ const Contact = () => {
                 <div className="contact-detail">
 
                     <div className="contact-name">
-                        <input type="text" id="conatct-form-name" className="conatct-form-name" placeholder="Your Name" required={true} />
+                        <input type="text" id="conatct-form-name" className="contact-form-name" placeholder="Your Name" required={true} />
                     </div>
 
                     <div className="contact-email">
-                        <input type="email" id="conatct-form-email" className="conatct-form-email" placeholder="Your Email" required={true} />
+                        <input type="email" id="conatct-form-email" className="contact-form-email" placeholder="Your Email" required={true} />
                     </div>
 
                     <div className="contact-phone">
-                        <input type="number" id="conatct-form-phone" className="conatct-form-phone" placeholder="Your Phone Number" required={true} />
+                        <input type="number" id="conatct-form-phone" className="contact-form-phone" placeholder="Your Phone Number" required={true} />
                     </div>
 
                 </div>

@@ -10,7 +10,10 @@ const Login = () => {
                 <figure>
                     <img src={loginpic} alt="signin-pic" className="logimage" />
                 </figure>
-                <Link to="/signup" className="signin-link">Create an account ?</Link>
+                <div className= "next-link">
+                    <div>Create an account ?</div>
+                    <Link to="/login" className="signup-link">Sign Up</Link>
+                </div>
             </div>
 
             <div className="register-container">

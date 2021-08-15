@@ -145,12 +145,17 @@ ul li a:hover {
 }
 
 .signup-link, .signin-link {
-  color: black;
+  color: rgb(43, 128, 238);
   text-decoration: none;
+  margin-left: 5px;
 }
 
 .signup-link:hover, .signin-link:hover {
-  color: rgb(43, 128, 238);
+  color: rgb(6, 79, 175);
+}
+
+.next-link {
+  display: flex;
 }
 
 /* Contact page */
@@ -211,12 +216,12 @@ ul li a:hover {
   margin: 20px 0 0 20px;
 }
 
-.conatct-form-name, .conatct-form-email, .conatct-form-phone {
+.contact-form-name, .contact-form-email, .contact-form-phone {
   display: flex;
   margin-right: 20px;
   width: 200px;
   background: none;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(112, 110, 110);
   outline: none ;
   padding: 5px 20px;
   border-radius: 5px;
@@ -240,7 +245,7 @@ ul li a:hover {
   width: 47vw;
   height: 15vh;
   outline: none;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(112, 110, 110);
   font-size: 1.1rem;
 }
 
