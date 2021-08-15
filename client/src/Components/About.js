@@ -23,12 +23,17 @@ const About = () => {
                         <p>RANKING: <span>1/10</span></p>
                     </div>
                     <din className="edit-button">
-                        <button type="submit">Edit</button>
+                        <button type="submit">Edit Profile</button>
                     </din>
                 </div>
 
                 <div className="timeline-container">
-                    TIMELINE
+                    <div className= "timeline-navbar">
+                        <ul>
+                            <li><a href="#" id= "about">About</a></li>
+                            <li><a href="#" id= "timeline">Timeline</a></li>
+                        </ul>
+                    </div>
                 </div>
 
             </div>
