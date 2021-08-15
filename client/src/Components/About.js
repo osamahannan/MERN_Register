@@ -8,16 +8,28 @@ const About = () => {
             <div className="about-link">
                 <img src={profilepic} alt="profile pic" />
 
-                <div className="form-group">
-                    <a href="/#" target ="_blank" rel="noreferrer">Linked In</a>
-                    <a href="/#" target ="_blank" rel="noreferrer">Github</a>
-                    <a href="/#" target ="_blank" rel="noreferrer">Instagram</a>
-                    <a href="/#" target ="_blank" rel="noreferrer">Facebook</a>
-                    <a href="/  #" target ="_blank" rel="noreferrer">Twitter</a>
-                </div>
+                <a href="https://www.linkedin.com/in/osama-hannan-7337921a0/" target="_blank" rel="noreferrer">Linked In</a>
+                <a href="https://github.com/osamahannan" target="_blank" rel="noreferrer">Github</a>
+                <a href="https://www.instagram.com/osamahannan5/" target="_blank" rel="noreferrer">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=100010625177535" target="_blank" rel="noreferrer">Facebook</a>
+                <a href="https://twitter.com/Osamahannan1" target="_blank" rel="noreferrer">Twitter</a>
             </div>
 
             <div className="about-details">
+                <div className="rank">
+                    <div className="rank-container">
+                        <h3>Osama Hannan</h3>
+                        <h4>Web Developer</h4>
+                        <p>RANKING: <span>1/10</span></p>
+                    </div>
+                    <din className="edit-button">
+                        <button type="submit">Edit</button>
+                    </din>
+                </div>
+
+                <div className="timeline-container">
+                    TIMELINE
+                </div>
 
             </div>
         </div>
