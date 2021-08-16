@@ -12,7 +12,7 @@ const Login = () => {
                 </figure>
                 <div className= "next-link">
                     <div>Create an account ?</div>
-                    <Link to="/login" className="signup-link">Sign Up</Link>
+                    <Link to="/signup" className="signup-link">Sign Up</Link>
                 </div>
             </div>
 

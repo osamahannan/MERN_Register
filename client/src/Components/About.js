@@ -22,17 +22,37 @@ const About = () => {
                         <h4>Web Developer</h4>
                         <p>RANKING: <span>1/10</span></p>
                     </div>
-                    <din className="edit-button">
+                    <div className="edit-button">
                         <button type="submit">Edit Profile</button>
-                    </din>
+                    </div>
                 </div>
 
                 <div className="timeline-container">
-                    <div className= "timeline-navbar">
+                    <nav className= "timeline-navbar">
                         <ul>
-                            <li><a href="#" id= "about">About</a></li>
-                            <li><a href="#" id= "timeline">Timeline</a></li>
+                            <li><a href="/#" id= "about">About</a></li>
+                            <li><a href="/#" id= "timeline">Timeline</a></li>
                         </ul>
+                    </nav>
+                    <div className= "detail-field">
+                        <label className="userid">User Id</label>
+                        <p className="profession">786547854865</p>
+                    </div>
+                    <div className= "detail-field">
+                        <label className="userid">Name</label>
+                        <p className="profession">Osama Hannan</p>
+                    </div>
+                    <div className= "detail-field">
+                        <label className="userid">Email</label>
+                        <p className="profession">osamahannan9@gmail.com</p>
+                    </div>
+                    <div className= "detail-field">
+                        <label className="userid">Phone</label>
+                        <p className="profession">9823145678</p>
+                    </div>
+                    <div className= "detail-field">
+                        <label className="userid">Profession</label>
+                        <p className="profession">Front-end Developer</p>
                     </div>
                 </div>
 

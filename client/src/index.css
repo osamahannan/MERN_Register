@@ -349,32 +349,36 @@ ul li a:hover {
 
 .timeline-container {
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
+  flex-direction: column;
   margin-top: 40px;
   width: 380px;
+  height: 245px;
 }
 
 .timeline-navbar {
   display: flex;
   width: 350px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+  margin-left: 5px;
 }
 
 .timeline-navbar ul {
   display: flex;
   justify-content: flex-start;
-  padding: 5px;
 }
 
 .timeline-navbar ul li {
   list-style: none;
+  padding: 8px;
 }
 
 .timeline-navbar ul li a {
   text-decoration: none;
-  padding: 13px;
+  padding: 8px;
   font-weight: bold;
+  border-bottom: 2px solid rgb(29, 93, 177);
+  margin-left: -7px;
 }
 
 #about {
@@ -382,5 +386,20 @@ ul li a:hover {
 }
 
 #timeline {
+  color: rgb(43, 128, 238);
+}
+
+.detail-field {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 13px;
+  padding-left: 14px;
+}
+
+.userid {
+  color: rgb(43, 43, 44);
+}
+
+.profession {
   color: rgb(43, 128, 238);
 }
