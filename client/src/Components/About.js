@@ -1,7 +1,15 @@
 import React from 'react';
 import profilepic from '../assets/profile.jpg';
+import { useState } from 'react';
 
 const About = () => {
+
+    const [toggleState, setToggleState] = useState(1);
+
+    const toggleTab = (index) => {
+        setToggleState(index);
+    }
+
     return (
         <div className="about">
 
@@ -31,15 +39,15 @@ const About = () => {
                 <div className="timeline-container">
                     <nav className="timeline-navbar">
                         <ul>
-                            <li><a href="/#" id="about">About</a></li>
-                            <li><a href="/#" id="timeline">Timeline</a></li>
+                            <li><label onClick={() => toggleTab(1)} className={toggleState === 1 ? "default default-active" : "default"}>About</label></li>
+                            <li><label onClick={() => toggleTab(2)} className={toggleState === 2 ? "timeline timeline-active" : "timeline"}>Timeline</label></li>
                         </ul>
                     </nav>
 
-                    <div className="first-slide">
+                    <div className={toggleState === 1 ? "first-slide active" : "hide"}>
                         <div className="detail-field">
                             <label className="userid">User Id</label>
-                            <p className="profession">786547854865</p>
+                            <p className="profession">C A R N A G E</p>
                         </div>
                         <div className="detail-field">
                             <label className="userid">Name</label>
@@ -59,7 +67,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    <div className="second-slide">
+                    <div className={toggleState === 2 ? "second-slide active" : "hide"}>
 
                         <div className="detail-field">
                             <label className="userid">Experience</label>

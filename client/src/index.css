@@ -378,20 +378,28 @@ ul li a:hover {
   padding: 8px;
 }
 
-.timeline-navbar ul li a {
+.timeline-navbar ul li label {
   text-decoration: none;
   padding: 8px;
   font-weight: bold;
-  border-bottom: 2px solid rgb(29, 93, 177);
   margin-left: -7px;
+  cursor: pointer;
 }
 
-#about {
+.default {
   color: rgb(43, 43, 44);
 }
 
-#timeline {
+.timeline {
   color: rgb(43, 128, 238);
+}
+
+.default-active {
+  border-bottom: 2px solid rgb(29, 93, 177);
+}
+
+.timeline-active {
+  border-bottom: 2px solid rgb(29, 93, 177);
 }
 
 .first-slide {
@@ -401,6 +409,14 @@ ul li a:hover {
 
 .second-slide {
   margin-top: 20px;
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.hide {
   display: none;
 }
 
