@@ -278,7 +278,7 @@ ul li a:hover {
 /* About page */
 
 .about {
-  height: 470px;
+  height: 500px;
   margin-top: 40px;
 }
 
@@ -286,11 +286,11 @@ ul li a:hover {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  margin-top: -25px;
+  margin-top: 5px;
 }
 
 .about-link a {
-  color: rgb(43, 43, 44);
+  color: rgb(43, 128, 238);
   text-decoration: none;
   font-weight: bold;
   margin-top: 3px;
@@ -300,9 +300,13 @@ ul li a:hover {
 
 .about-link img {
   height: 190px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   padding-bottom: 5px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.about-link h4 {
+  color: rgb(43, 43, 44);
 }
 
 .about-details {
@@ -390,7 +394,13 @@ ul li a:hover {
   color: rgb(43, 128, 238);
 }
 
+.first-slide {
+  margin-top: 20px;
+  display: block;
+}
+
 .second-slide {
+  margin-top: 20px;
   display: none;
 }
 

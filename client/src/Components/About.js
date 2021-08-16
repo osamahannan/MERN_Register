@@ -7,6 +7,7 @@ const About = () => {
 
             <div className="about-link">
                 <img src={profilepic} alt="profile pic" />
+                <h4>WORK LINKS</h4>
 
                 <a href="https://www.linkedin.com/in/osama-hannan-7337921a0/" target="_blank" rel="noreferrer">Linked In</a>
                 <a href="https://github.com/osamahannan" target="_blank" rel="noreferrer">Github</a>
