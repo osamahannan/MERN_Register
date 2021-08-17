@@ -6,6 +6,7 @@ import Contact from "./Components/Contact";
 import About from "./Components/About";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
+import Errorpage from "./Components/Errorpage";
 
 function App() {
   return (
@@ -32,7 +33,11 @@ function App() {
         <Route exact path= "/signup">
           <Signup />
         </Route>
-        
+
+        <Route>
+          <Errorpage />
+        </Route>
+
       </>
     </div>
   );
