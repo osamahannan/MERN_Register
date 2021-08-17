@@ -453,7 +453,7 @@ ul li a:hover {
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 13%; 
+  top: 14%; 
   font-size: 7rem;
   color: rgb(169, 226, 243);
 }
@@ -468,8 +468,29 @@ ul li a:hover {
 
 .error-info p {
   font-size: 1.2rem;
+  text-align: center;
+}
+
+.error-info button {
+  border: none;
+  margin: 30px;
+  background: none;
 }
 
 .back-button {
+  text-decoration: none;
+  background-color: rgb(43, 128, 238);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  color: white;
+  border: none;
+  margin: 20px;
 }
 
+.back-button:hover {
+  background: none;
+  border: 2px solid rgb(43, 128, 238);
+  color: rgb(43, 128, 238);
+  transition: 0.1 all ease;
+}
