@@ -434,3 +434,42 @@ ul li a:hover {
 .profession {
   color: rgb(43, 128, 238);
 }
+
+/* Error Page */
+#notfound, .notfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.notfound {
+  flex-direction: column;
+  width: 700px;
+}
+
+.notfound-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 13%; 
+  font-size: 7rem;
+  color: rgb(169, 226, 243);
+}
+
+.error-info {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 27%;
+  font-size: 2rem;
+}
+
+.error-info p {
+  font-size: 1.2rem;
+}
+
+.back-button {
+}
+
