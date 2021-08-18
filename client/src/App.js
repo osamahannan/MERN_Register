@@ -1,5 +1,5 @@
 import './index.css';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Nav from "./Components/Nav";
 import Home from "./Components/Home";
 import Contact from "./Components/Contact";
@@ -12,31 +12,32 @@ function App() {
   return (
     <div className="App">
       <>
-        <Nav/>
+        <Nav />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-        <Route exact path= "/">
-          <Home />
-        </Route>
+          <Route exact path="/About">
+            <About />
+          </Route>
 
-        <Route exact path= "/About">
-          <About />
-        </Route>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
 
-        <Route exact path= "/contact">
-          <Contact />
-        </Route>
+          <Route exact path="/login">
+            <Login />
+          </Route>
 
-        <Route exact path= "/login">
-          <Login />
-        </Route>
+          <Route exact path="/signup">
+            <Signup />
+          </Route>
 
-        <Route exact path= "/signup">
-          <Signup />
-        </Route>
-
-        <Route>
-          <Errorpage />
-        </Route>
+          <Route>
+            <Errorpage />
+          </Route>
+        </Switch>
 
       </>
     </div>
