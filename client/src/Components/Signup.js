@@ -7,9 +7,13 @@ const Signup = () => {
     const [user, setUser] = useState({
         name:"", email:"", phone:"", work:"", password:"", cpassword:""
     });
-
+    
+    let name, value;
     const handleInputs = (e) => {
         console.log(e);
+        name = e.target.name;
+        value = e.target.value;
+        setUser({...user, [name]: value})
     }
 
     return (
