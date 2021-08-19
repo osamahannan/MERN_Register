@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import signpic from '../assets/signup.png';
-import { Link } from 'react-router-dom';
+import { Link, useHistory} from 'react-router-dom';
 
 const Signup = () => {
+
+    const history = useHistory();
 
     const [user, setUser] = useState({
         name:"", email:"", phone:"", work:"", password:"", cpassword:""
@@ -10,10 +12,36 @@ const Signup = () => {
     
     let name, value;
     const handleInputs = (e) => {
-        console.log(e);
+        // console.log(e);
         name = e.target.name;
         value = e.target.value;
         setUser({...user, [name]: value})
+    }
+
+    const PostData = async (e) => {
+        e.preventDefault();
+
+        const { name, email, phone, work, password, cpassword } = user;
+
+        const res = await fetch("/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name, email, phone, work, password, cpassword
+            })
+        });
+
+        const data = await res.json();
+        if(data.status === 422 || !data) {
+            window.alert("Invalid Registration");
+            console.log("Invalid Registration");
+        } else {
+            window.alert("Registration Successful");
+            console.log("Registration Successful");
+            history.push('/login');
+        }
     }
 
     return (
@@ -21,7 +49,7 @@ const Signup = () => {
             <div className="register-container">
                 <h1>Sign Up</h1>
 
-                <form className="register-form" id="register-form">
+                <form method= "POST" className="register-form" id="register-form">
                     <div className="form-group">
                         <label htmlFor="name">
                             <i className="zmdi zmdi-account"></i>
@@ -80,7 +108,8 @@ const Signup = () => {
                 </form>
 
                 <div className="button">
-                    <button type="submit" name="signup" id="signup" className="btn" value="register">Register</button>
+                    <button type="submit" name="signup" id="signup" className="btn" value="register"
+                    onClick={PostData} >Register</button>
                 </div>
 
             </div>
