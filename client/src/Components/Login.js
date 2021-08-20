@@ -1,11 +1,38 @@
 import React, {useState} from 'react'
 import loginpic from '../assets/login.svg';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const Login = () => {
 
+    const history = useHistory();
+
     const  [email, setEmail] = useState('');
     const  [password, setPassword] = useState('');
+
+    const loginUser = async (e) => {
+        e.preventDefault();
+
+        const res = await fetch("/signin", {
+            method: "POST",
+            header: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email, password
+            })
+        });
+
+        const data = await res.json();
+
+        if(data.status === 400 || !data) {
+            window.alert("Invalid Credential");
+        }
+        else {
+            window.alert("Login Successful");
+            history.push('/');
+        }
+
+    }
 
     return (
         <div className="register">
@@ -23,7 +50,7 @@ const Login = () => {
             <div className="register-container">
                 <h1>Log In</h1>
 
-                <form className="register-form" id="register-form">
+                <form method= "POST" className="register-form" id="register-form">
                     <div className="form-group">
                         <label htmlFor="name">
                             <i className="zmdi zmdi-email"></i>
@@ -47,7 +74,7 @@ const Login = () => {
                 </form>
 
                 <div className="button">
-                    <button type="submit" name="signin" id="signin" className="btn" value="register">Log In</button>
+                    <button type="submit" name="signin" onClick= {loginUser} id="signin" className="btn" value="Log In">Log In</button>
                 </div>
 
             </div>
