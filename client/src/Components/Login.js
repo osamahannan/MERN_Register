@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 import loginpic from '../assets/login.svg';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+
+    const  [email, setEmail] = useState('');
+    const  [password, setPassword] = useState('');
+
     return (
         <div className="register">
 
@@ -24,14 +28,20 @@ const Login = () => {
                         <label htmlFor="name">
                             <i className="zmdi zmdi-email"></i>
                         </label>
-                        <input type="email" name="email" id="email" autoComplete="off" placeholder="Your Email" />
+                        <input type="email" name="email" id="email" autoComplete="off" 
+                        value= {email}
+                        onChange= {(e) => setEmail(e.target.value)}
+                        placeholder="Your Email" />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="password">
                             <i className="zmdi zmdi-lock"></i>
                         </label>
-                        <input type="password" name="password" id="password" autoComplete="off" placeholder="Your Password" />
+                        <input type="password" name="password" id="password" autoComplete="off" 
+                        value= {password}
+                        onChange= {(e) => setPassword(e.target.value)}
+                        placeholder="Your Password" />
                     </div>
 
                 </form>
