@@ -10,12 +10,13 @@ const Login = () => {
     const  [password, setPassword] = useState('');
 
     const loginUser = async (e) => {
-        e.preventDefault();
 
+        e.preventDefault();
+        
         const res = await fetch("/signin", {
             method: "POST",
             header: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
                 email, password
@@ -55,8 +56,8 @@ const Login = () => {
                         <label htmlFor="name">
                             <i className="zmdi zmdi-email"></i>
                         </label>
-                        <input type="email" name="email" id="email" autoComplete="off" 
-                        value= {email}
+                        <input type="email" name="email" id="email" autoComplete="off"
+                        value = {email}
                         onChange= {(e) => setEmail(e.target.value)}
                         placeholder="Your Email" />
                     </div>
@@ -66,7 +67,7 @@ const Login = () => {
                             <i className="zmdi zmdi-lock"></i>
                         </label>
                         <input type="password" name="password" id="password" autoComplete="off" 
-                        value= {password}
+                        value = {password}
                         onChange= {(e) => setPassword(e.target.value)}
                         placeholder="Your Password" />
                     </div>
@@ -74,7 +75,7 @@ const Login = () => {
                 </form>
 
                 <div className="button">
-                    <button type="submit" name="signin" onClick= {loginUser} id="signin" className="btn" value="Log In">Log In</button>
+                    <button type="submit" name="signin" onClick={loginUser} id="signin" className="btn" value="Log In">Log In</button>
                 </div>
 
             </div>

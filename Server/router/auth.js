@@ -52,6 +52,11 @@ router.post('/signin', async (req, res) => {
     
     try {
         const {email, password} = req.body;
+        // const email= JSON.parse(email1);
+        // const password= JSON.parse(password1);
+        // console.log(email);
+        // console.log(password);
+        // console.log("print ho raha h");
 
         if(!email || !password) {
             return res.status(400).json({error: "please fill all the details"})
