@@ -10,12 +10,12 @@ const Login = () => {
     const  [password, setPassword] = useState('');
 
     const loginUser = async (e) => {
-
+        
         e.preventDefault();
         
         const res = await fetch("/signin", {
             method: "POST",
-            header: {
+            headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({

@@ -52,11 +52,6 @@ router.post('/signin', async (req, res) => {
     
     try {
         const {email, password} = req.body;
-        // const email= JSON.parse(email1);
-        // const password= JSON.parse(password1);
-        // console.log(email);
-        // console.log(password);
-        // console.log("print ho raha h");
 
         if(!email || !password) {
             return res.status(400).json({error: "please fill all the details"})
@@ -68,7 +63,7 @@ router.post('/signin', async (req, res) => {
 
             const isMatch = await bcrypt.compare(password, userLogin.password);
             const token = await userLogin.generateAuthToken();
-            console.log(token);
+            // console.log(token);
             res.cookie("jwtoken", token, {
                 expires:new Date(Date.now() + 25892000000),
                 httpOnly: true
@@ -88,6 +83,12 @@ router.post('/signin', async (req, res) => {
     } catch (err) {
         console.log(err);
     }
+})
+
+// About Page
+
+router.get('/about', (req, res)=> {
+    res.send("This is About Page");
 })
 
 module.exports = router;
