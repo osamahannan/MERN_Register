@@ -87,7 +87,7 @@ router.post('/signin', async (req, res) => {
 
 // About Page
 
-router.get('/about', (req, res)=> {
+router.get('/about', authenticate, (req, res)=> {
     res.send("This is About Page");
 })
 

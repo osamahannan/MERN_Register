@@ -10,10 +10,6 @@ app.use(express.json());
 const PORT = process.env.PORT;
 app.use(require('./router/auth'));
 
-// app.get('/', (req, res)=> {
-//     res.send("This is Home Page");
-// })
-
 // app.get('/about', (req, res)=> {
 //     res.send("This is About Page");
 // })
