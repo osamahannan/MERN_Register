@@ -1,49 +1,49 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import profilepic from '../assets/profile.jpg';
-import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const About = () => {
 
     const history = useHistory();
-
+    
     const [toggleState, setToggleState] = useState(1);
-
+    const [userData, setUserData] = useState({});
+    
     const toggleTab = (index) => {
         setToggleState(index);
     }
-
-    const callAboutPage = async () => {
-        try {
-            const res = await fetch('/about', {
-                method: "GET",
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json"
-                },
-                credentials: "include"
-            });
-
-            const data = await res.json();
-
-            if(!res.status === 200) {
-                const error = new Error(res.error);
-                throw error;
-            }
-
-        } catch(err) {
-            console.log(err);
-            history.push('/login');
-        }
-    }
-
+    
     useEffect(() => {
+        const callAboutPage = async () => {
+            try {
+                const res = await fetch('/about', {
+                    method: "GET",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json"
+                    },
+                    credentials: "include"
+                });
+
+                const data = await res.json();
+                setUserData(data);
+
+                if (!res.status === 200) {
+                    const error = new Error(res.error);
+                    throw error;
+                }
+
+            } catch (err) {
+                console.log(err);
+                history.push('/login');
+            }
+        }
         callAboutPage();
-    }, []);
+    }, [history]);
 
     return (
         <div className="about">
-            <form method="GET" className= "about-form">
+            <form method="GET" className="about-form">
 
                 <div className="about-link">
                     <img src={profilepic} alt="profile pic" />
@@ -59,8 +59,8 @@ const About = () => {
                 <div className="about-details">
                     <div className="rank">
                         <div className="rank-container">
-                            <h3>Osama Hannan</h3>
-                            <h4>Web Developer</h4>
+                            <h3>{userData.name}</h3>
+                            <h4>{userData.work}</h4>
                             <p>RANKING: <span>1/10</span></p>
                         </div>
                         <div className="edit-button">
@@ -79,23 +79,23 @@ const About = () => {
                         <div className={toggleState === 1 ? "first-slide active" : "hide"}>
                             <div className="detail-field">
                                 <label className="userid">User Id</label>
-                                <p className="profession">C A R N A G E</p>
+                                <p className="profession">{userData._id}</p>
                             </div>
                             <div className="detail-field">
                                 <label className="userid">Name</label>
-                                <p className="profession">Osama Hannan</p>
+                                <p className="profession">{userData.name}</p>
                             </div>
                             <div className="detail-field">
                                 <label className="userid">Email</label>
-                                <p className="profession">osamahannan9@gmail.com</p>
+                                <p className="profession">{userData.email}</p>
                             </div>
                             <div className="detail-field">
                                 <label className="userid">Phone</label>
-                                <p className="profession">9823145678</p>
+                                <p className="profession">{userData.phone}</p>
                             </div>
                             <div className="detail-field">
                                 <label className="userid">Profession</label>
-                                <p className="profession">Front-end Developer</p>
+                                <p className="profession">{userData.work}</p>
                             </div>
                         </div>
 
@@ -119,7 +119,7 @@ const About = () => {
                             </div>
                             <div className="detail-field">
                                 <label className="userid">Availability</label>
-                                <p className="profession">6 Monthsr</p>
+                                <p className="profession">6 Months</p>
                             </div>
                         </div>
                     </div>
