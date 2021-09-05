@@ -76,7 +76,7 @@ ul li a:hover {
 }
 
 /* Register page & Login page */
-.register, .about {
+.register, .about-form {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -277,7 +277,7 @@ ul li a:hover {
 
 /* About page */
 
-.about {
+.about-form {
   height: 500px;
   margin-top: 40px;
 }

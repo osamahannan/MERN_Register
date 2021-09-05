@@ -3,9 +3,11 @@ const jwt = require('jsonwebtoken');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const authenticate = require("../middleware/authenticate");
+const cookieParser = require('cookie-parser');
 
 
 require('../db/conn');
+router.use(cookieParser());
 const User = require('../model/userSchema');
 
 router.get('/', (req, res)=> {
@@ -88,8 +90,8 @@ router.post('/signin', async (req, res) => {
 
 // About Page
 
-router.get('/about', authenticate, (req, res)=> {
-    res.send("This is About Page");
+router.get('/about', authenticate, async (req, res)=> {
+    res.send(req.rootUser);
 })
 
 module.exports = router;
