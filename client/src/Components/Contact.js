@@ -72,7 +72,8 @@ const Contact = () => {
                 <div className="contact-detail">
 
                     <div className="contact-name">
-                        <input type="text" id="conatct-form-name" className="contact-form-name" placeholder="Your Name" required={true} value={userData.name}/>
+                        <input type="text" id="conatct-form-name" className="contact-form-name" placeholder="Your Name" required={true}
+                        value={userData.name}/>
                     </div>
 
                     <div className="contact-email">
