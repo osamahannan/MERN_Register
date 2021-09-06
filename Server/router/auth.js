@@ -94,4 +94,8 @@ router.get('/about', authenticate, async (req, res)=> {
     res.send(req.rootUser);
 })
 
+router.get('/getData', authenticate, async (req, res)=> {
+    res.send(req.rootUser);
+})
+
 module.exports = router;

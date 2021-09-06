@@ -1,9 +1,37 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import mobilepic from '../assets/mobile.png';
 import emailpic from '../assets/email.png';
 import addresspic from '../assets/address.png';
 
 const Contact = () => {
+
+    const [userData, setUserData] = useState({});
+
+    useEffect(() => {
+        const callContactPage = async () => {
+            try {
+                const res = await fetch('/getData', {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                });
+
+                const data = await res.json();
+                setUserData(data);
+
+                if (!res.status === 200) {
+                    const error = new Error(res.error);
+                    throw error;
+                }
+
+            } catch (err) {
+                console.log(err);
+            }
+        }
+        callContactPage();
+    }, []);
+
     return (
         <div className="contact-main">
 
@@ -14,7 +42,7 @@ const Contact = () => {
 
                     <div className="phone">
                         <span>Phone</span>
-                        <span>+91 6306020618</span>
+                        <span>8181007106</span>
                     </div>
                 </div>
                 <div className="email-info">
@@ -22,7 +50,7 @@ const Contact = () => {
 
                     <div className="email">
                         <span>Email</span>
-                        <span>osamahannan9@gmail.com</span>
+                        <span>contactosama@gmail.com</span>
                     </div>
                 </div>
                 <div className="address-info">
@@ -44,15 +72,15 @@ const Contact = () => {
                 <div className="contact-detail">
 
                     <div className="contact-name">
-                        <input type="text" id="conatct-form-name" className="contact-form-name" placeholder="Your Name" required={true} />
+                        <input type="text" id="conatct-form-name" className="contact-form-name" placeholder="Your Name" required={true} value={userData.name}/>
                     </div>
 
                     <div className="contact-email">
-                        <input type="email" id="conatct-form-email" className="contact-form-email" placeholder="Your Email" required={true} />
+                        <input type="email" id="conatct-form-email" className="contact-form-email" placeholder="Your Email" required={true} value={userData.email}/>
                     </div>
 
                     <div className="contact-phone">
-                        <input type="number" id="conatct-form-phone" className="contact-form-phone" placeholder="Your Phone Number" required={true} />
+                        <input type="number" id="conatct-form-phone" className="contact-form-phone" placeholder="Your Phone Number" required={true} value={userData.phone}/>
                     </div>
 
                 </div>
