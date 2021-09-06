@@ -89,13 +89,39 @@ router.post('/signin', async (req, res) => {
 })
 
 // About Page
-
 router.get('/about', authenticate, async (req, res)=> {
     res.send(req.rootUser);
 })
 
 router.get('/getData', authenticate, async (req, res)=> {
     res.send(req.rootUser);
+})
+
+// Contact page
+router.post('/contact', authenticate, async (req, res)=> {
+    
+    try {
+
+        const {name, email, phone, message } = req.body;
+
+        if(!name || !email || !phone || !message) {
+            console.log("error in contact form");
+            return res.json({ error: "please fill the contact form"});
+        }
+
+        const userContact = await User.findOne({_id: req.userID})
+
+        if(userContact) {
+
+            const userMessage = await userContact.addMessage(name, email, phone, message);
+            await userContact.save();
+
+            res.status(201).json({ message: "User Contact Successful"});
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
 })
 
 module.exports = router;

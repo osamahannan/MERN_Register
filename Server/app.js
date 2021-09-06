@@ -16,9 +16,9 @@ app.use(require('./router/auth'));
 //     res.send("This is About Page");
 // })
 
-app.get('/contact', (req, res)=> {
-    res.send("This Contact Page");
-})
+// app.get('/contact', (req, res)=> {
+//     res.send("This Contact Page");
+// })
 
 app.get('/signin', (req, res)=> {
     res.send("This is Login Page");

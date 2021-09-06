@@ -32,12 +32,40 @@ const Contact = () => {
             }
         }
         callContactPage();
-    }, [userData]);
+    }, []);
 
+    // storing data in states
     const handleInputs = (e) => {
         const name = e.target.name;
         const value = e.target.value;
         setUserData({ ...userData, [name]: value })
+    }
+
+    // sending data in backend
+    const contactForm = async (e) => {
+        e.preventDefault();
+
+        const { name, email, phone, message} = userData;
+
+        const res= await fetch('/contact', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name, email, phone, message
+            })
+        });
+
+        const data = await res.json();
+
+        if(!data) {
+            console.log("message not send")
+        } else {
+            alert("Message Send");
+            setUserData({...userData, message: ""});
+        }
+
     }
 
     return (
@@ -76,46 +104,48 @@ const Contact = () => {
                 <div className="contact-heading">
                     <h1>Get in touch</h1>
                 </div>
+                <form method= "POST">
 
-                <div className="contact-detail">
+                    <div className="contact-detail">
 
-                    <div className="contact-name">
-                        <input type="text" id="conatct-form-name" className="contact-form-name"
-                            name= "name"
-                            placeholder="Your Name" required={true}
-                            onChange={handleInputs}
-                            value={userData.name} />
+                        <div className="contact-name">
+                            <input type="text" id="conatct-form-name" className="contact-form-name"
+                                name="name"
+                                placeholder="Your Name" required={true}
+                                onChange={handleInputs}
+                                value={userData.name} />
+                        </div>
+
+                        <div className="contact-email">
+                            <input type="email" id="conatct-form-email" className="contact-form-email"
+                                name="email"
+                                placeholder="Your Email" required={true}
+                                onChange={handleInputs}
+                                value={userData.email} />
+                        </div>
+
+                        <div className="contact-phone">
+                            <input type="number" id="conatct-form-phone" className="contact-form-phone"
+                                name="phone"
+                                placeholder="Your Phone Number" required={true}
+                                onChange={handleInputs}
+                                value={userData.phone} />
+                        </div>
+
                     </div>
 
-                    <div className="contact-email">
-                        <input type="email" id="conatct-form-email" className="contact-form-email"
-                            name= "email"
-                            placeholder="Your Email" required={true}
+                    <div className="contact-text">
+                        <textarea className="contact-text-field"
+                            name="message"
                             onChange={handleInputs}
-                            value={userData.email} />
+                            value={userData.message}
+                            placeholder="Message" cols="30" rows="10"></textarea>
                     </div>
 
-                    <div className="contact-phone">
-                        <input type="number" id="conatct-form-phone" className="contact-form-phone"
-                            name= "phone"
-                            placeholder="Your Phone Number" required={true}
-                            onChange={handleInputs}
-                            value={userData.phone} />
+                    <div className="contact-button">
+                        <button type="submit" className="btn" onClick={contactForm} >Send Message</button>
                     </div>
-
-                </div>
-
-                <div className="contact-text">
-                    <textarea className="contact-text-field"
-                        name= "message"
-                        onChange={handleInputs}
-                        value={userData.message}
-                        placeholder="Message" cols="30" rows="10"></textarea>
-                </div>
-
-                <div className="contact-button">
-                    <button type="submit" className="btn">Send Message</button>
-                </div>
+                </form>
 
             </div>
 
