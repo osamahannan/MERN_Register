@@ -1,6 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 
 const Home = () => {
+
+    const [userName, setUserName] = useState('');
+
+    useEffect(() => {
+        const callHomePage = async () => {
+            try {
+                const res = await fetch('/getData', {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                });
+
+                const data = await res.json();
+                userName(data.name);
+
+            } catch (err) {
+                console.log(err);
+            }
+        }
+        callHomePage();
+    }, []);
+
     return (
         <div className="container">
 
@@ -8,7 +31,7 @@ const Home = () => {
                 WELCOME
             </div>
             <div className="developer">
-                We Are The MERN Developer
+                {userName}
             </div>
 
         </div>
