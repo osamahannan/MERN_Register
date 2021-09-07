@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 const Home = () => {
 
     const [userName, setUserName] = useState('');
+    const show = true;
 
     useEffect(() => {
         const callHomePage = async () => {
@@ -15,7 +16,7 @@ const Home = () => {
                 });
 
                 const data = await res.json();
-                userName(data.name);
+                setUserName(data.name);
 
             } catch (err) {
                 console.log(err);
@@ -32,6 +33,9 @@ const Home = () => {
             </div>
             <div className="developer">
                 {userName}
+            </div>
+            <div className="greetings">
+                { show ? 'Happy to see you back!' : 'We Are The MERN Developer'}
             </div>
 
         </div>

@@ -271,9 +271,15 @@ ul li a:hover {
 }
 
 .developer {
-  font-size: 2rem;
+  font-size: 3rem;
   color: rgb(43, 43, 44);
   font-weight: bold;
+}
+
+.greetings {
+  font-size: 2rem;
+  color: rgb(43, 43, 44);
+  font-weight: 500;
 }
 
 /* About page */
