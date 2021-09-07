@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 const Home = () => {
 
     const [userName, setUserName] = useState('');
-    const show = true;
+    const [show, setShow] = useState(false);
+    
 
     useEffect(() => {
         const callHomePage = async () => {
@@ -17,6 +18,7 @@ const Home = () => {
 
                 const data = await res.json();
                 setUserName(data.name);
+                setShow(true);
 
             } catch (err) {
                 console.log(err);
