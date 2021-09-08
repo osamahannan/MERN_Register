@@ -7,6 +7,7 @@ import About from "./Components/About";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import Errorpage from "./Components/Errorpage";
+import Logout from './Components/Logout';
 
 function App() {
   return (
@@ -32,6 +33,10 @@ function App() {
 
           <Route exact path="/signup">
             <Signup />
+          </Route>
+
+          <Route exact path="/logout">
+            <Logout />
           </Route>
 
           <Route>

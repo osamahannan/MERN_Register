@@ -29,7 +29,7 @@ router.post('/register', async (req, res) => {
         
         if(userExist) {
 
-            return res.status(422).json({error: "email already exist"})
+            return res.status(409).json({error: "email already exist"})
 
         } else if(password != cpassword) {
 
@@ -122,6 +122,12 @@ router.post('/contact', authenticate, async (req, res)=> {
     } catch (error) {
         console.log(error);
     }
+})
+
+// Logout Page
+router.get('/logout', (req, res)=> {
+    res.clearCookie('jwtoken', { path: '/'});
+    res.status(200).send("User Logout Successful");
 })
 
 module.exports = router;
