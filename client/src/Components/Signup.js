@@ -34,7 +34,7 @@ const Signup = () => {
         });
 
         const data = await res.json();
-        if(res.status === 409 || !res) {
+        if(res.status === 409 || !data) {
             window.alert("Email Already Exists");
             console.log("Invalid Registration");
         } else {

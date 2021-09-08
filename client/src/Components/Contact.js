@@ -9,28 +9,29 @@ const Contact = () => {
         name: "", email: "", phone: "", message: ""
     });
 
-    useEffect(() => {
-        const callContactPage = async () => {
-            try {
-                const res = await fetch('/getData', {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                });
+    const callContactPage = async () => {
+        try {
+            const res = await fetch('/getData', {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            });
 
-                const data = await res.json();
-                setUserData({ ...userData, name: data.name, email: data.email, phone: data.phone });
+            const data = await res.json();
+            setUserData({ ...userData, name: data.name, email: data.email, phone: data.phone });
 
-                if (!res.status === 200) {
-                    const error = new Error(res.error);
-                    throw error;
-                }
-
-            } catch (err) {
-                console.log(err);
+            if (!res.status === 200) {
+                const error = new Error(res.error);
+                throw error;
             }
+
+        } catch (err) {
+            console.log(err);
         }
+    } 
+
+    useEffect(() => {
         callContactPage();
     }, []);
 

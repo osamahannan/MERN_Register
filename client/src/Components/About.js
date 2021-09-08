@@ -12,34 +12,35 @@ const About = () => {
     const toggleTab = (index) => {
         setToggleState(index);
     }
+
+    const callAboutPage = async () => {
+        try {
+            const res = await fetch('/about', {
+                method: "GET",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json"
+                },
+                credentials: "include"
+            });
+
+            const data = await res.json();
+            setUserData(data);
+
+            if (!res.status === 200) {
+                const error = new Error(res.error);
+                throw error;
+            }
+
+        } catch (err) {
+            console.log(err);
+            history.push('/login');
+        }
+    }
     
     useEffect(() => {
-        const callAboutPage = async () => {
-            try {
-                const res = await fetch('/about', {
-                    method: "GET",
-                    headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json"
-                    },
-                    credentials: "include"
-                });
-
-                const data = await res.json();
-                setUserData(data);
-
-                if (!res.status === 200) {
-                    const error = new Error(res.error);
-                    throw error;
-                }
-
-            } catch (err) {
-                console.log(err);
-                history.push('/login');
-            }
-        }
         callAboutPage();
-    }, [history]);
+    }, []);
 
     return (
         <div className="about">
