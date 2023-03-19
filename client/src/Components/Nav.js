@@ -7,6 +7,7 @@ const Nav = () => {
 
     const { state, dispatch } = useContext(UserContext);
 
+
     const RenderMenu = () => {
         if (state) {
             return (
@@ -14,7 +15,7 @@ const Nav = () => {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">AboutMe</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
-                    <li><Link to="/logout">Log Out</Link></li>
+                    <li><Link to="/logout" >Log Out</Link></li>
                 </>
             )
         } else {

@@ -1,4 +1,4 @@
-import React, { createContext, useReducer} from 'react';
+import React, { createContext, useReducer } from 'react';
 import './index.css';
 import { Route, Switch } from 'react-router-dom';
 import Nav from "./Components/Nav";
@@ -17,6 +17,7 @@ export const UserContext = createContext();
 const Routing = () => {
   return (
     <Switch>
+
       <Route exact path="/">
         <Home />
       </Route>
@@ -44,6 +45,7 @@ const Routing = () => {
       <Route>
         <Errorpage />
       </Route>
+
     </Switch>
   );
 }

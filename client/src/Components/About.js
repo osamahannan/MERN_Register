@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import profilepic from '../assets/profile.jpg';
 import { useHistory } from 'react-router-dom';
+import { API_URI } from '../constants/apiConfig';
 
 const About = () => {
 
     const history = useHistory();
-    
+
     const [toggleState, setToggleState] = useState(1);
     const [userData, setUserData] = useState({});
-    
+
     const toggleTab = (index) => {
         setToggleState(index);
     }
 
     const callAboutPage = async () => {
         try {
-            const res = await fetch('/about', {
+            const res = await fetch(`${API_URI}/about`, {
                 method: "GET",
                 headers: {
                     Accept: "application/json",
@@ -37,7 +38,7 @@ const About = () => {
             history.push('/login');
         }
     }
-    
+
     useEffect(() => {
         callAboutPage();
     }, []);
@@ -65,7 +66,7 @@ const About = () => {
                             <p>RANKING: <span>1/10</span></p>
                         </div>
                         <div className="edit-button">
-                            <button type="submit">Edit Profile</button>
+                            <button type="submit" disabled>Edit Profile</button>
                         </div>
                     </div>
 
