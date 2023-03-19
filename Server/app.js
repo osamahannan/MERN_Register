@@ -2,9 +2,12 @@ const dotenv = require('dotenv');
 const cookieparser = require("cookie-parser");
 const express = require('express');
 const app = express();
+const cors = require("cors");
 
 // middelwares
-dotenv.config({ path:'./config.env'});
+app.use(cors({ origin: "*" }));
+app.options("*", cors());
+dotenv.config({ path: './config.env' });
 require('./db/conn');
 app.use(express.json());
 app.use(cookieparser());
@@ -20,11 +23,11 @@ app.use(require('./router/auth'));
 //     res.send("This Contact Page");
 // })
 
-app.get('/signin', (req, res)=> {
+app.get('/signin', (req, res) => {
     res.send("This is Login Page");
 })
 
-app.get('/signup', (req, res)=> {
+app.get('/signup', (req, res) => {
     res.send("This is SignUp page");
 })
 
