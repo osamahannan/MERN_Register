@@ -1,11 +1,16 @@
+const cors = require("cors");
 const dotenv = require('dotenv');
 const cookieparser = require("cookie-parser");
 const express = require('express');
 const app = express();
-const cors = require("cors");
+const corsOrigin = {
+    origin: ["https://mern-register-six.vercel.app"], //or whatever port your frontend is using
+    credentials: true,
+    optionSuccessStatus: 200
+}
+app.use(cors(corsOrigin));
 
 // middelwares
-app.use(cors({ origin: "*" }));
 app.options("*", cors());
 dotenv.config({ path: './config.env' });
 require('./db/conn');
