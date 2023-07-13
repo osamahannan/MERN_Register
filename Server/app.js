@@ -3,12 +3,8 @@ const dotenv = require('dotenv');
 const cookieparser = require("cookie-parser");
 const express = require('express');
 const app = express();
-const corsOrigin = {
-    origin: ["https://osama-mern-stack.netlify.app"], //or whatever port your frontend is using
-    credentials: true,
-    optionSuccessStatus: 200
-}
-app.use(cors(corsOrigin));
+app.use(cors({ origin: "*" }));
+// app.options("*", cors());
 
 // middelwares
 // app.options("*", cors());
