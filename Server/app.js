@@ -4,7 +4,7 @@ const cookieparser = require("cookie-parser");
 const express = require('express');
 const app = express();
 const corsOrigin = {
-    origin: ["https://timely-daffodil-b0c62a.netlify.app"], //or whatever port your frontend is using
+    origin: ["https://osama-mern-stack.netlify.app"], //or whatever port your frontend is using
     credentials: true,
     optionSuccessStatus: 200
 }
