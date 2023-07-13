@@ -4,14 +4,14 @@ const cookieparser = require("cookie-parser");
 const express = require('express');
 const app = express();
 const corsOrigin = {
-    origin: ["https://mern-register-six.vercel.app"], //or whatever port your frontend is using
+    origin: ["https://timely-daffodil-b0c62a.netlify.app"], //or whatever port your frontend is using
     credentials: true,
     optionSuccessStatus: 200
 }
 app.use(cors(corsOrigin));
 
 // middelwares
-app.options("*", cors());
+// app.options("*", cors());
 dotenv.config({ path: './config.env' });
 require('./db/conn');
 app.use(express.json());
