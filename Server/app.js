@@ -4,7 +4,7 @@ const cookieparser = require("cookie-parser");
 const express = require('express');
 const app = express();
 app.use(cors({ origin: "*" }));
-// app.options("*", cors());
+app.options("*", cors());
 
 // middelwares
 // app.options("*", cors());
