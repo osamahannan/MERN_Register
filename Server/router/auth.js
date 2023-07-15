@@ -1,5 +1,4 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const authenticate = require("../middleware/authenticate");
@@ -69,7 +68,7 @@ router.post('/signin', async (req, res) => {
             // console.log(token);
             res.cookie("jwtoken", token, {
                 expires: new Date(Date.now() + 25892000000),
-                httpOnly: true
+                httpOnly: false
             });
 
             if (!isMatch) {
