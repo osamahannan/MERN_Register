@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 require('../db/conn');
 router.use(cookieParser());
 const User = require('../model/userSchema');
+// console.log("User =")
 
 router.get('/', (req, res) => {
     res.send("This is Home Page from router js");
@@ -59,15 +60,24 @@ router.post('/signin', async (req, res) => {
             return res.status(422).json({ error: "please fill all the details" })
         }
 
+        console.log("email =", email , "passwors =", password)
+
+        // const userLogin = await User.findOne({ email: email });
         const userLogin = await User.findOne({ email: email });
+        console.log("userLogin=", userLogin)
 
         if (userLogin) {
 
             const isMatch = await bcrypt.compare(password, userLogin.password);
+            console.log("isMatch =", isMatch)
             const token = await userLogin.generateAuthToken();
+            // expiryDate = new Date(Date.now() + 25892000000)
+            const expiryDate = new Date();
+            expiryDate.setDate(expiryDate.getDate() + 30);
+            console.log("expiryDate =", expiryDate)
             // console.log(token);
             res.cookie("jwtoken", token, {
-                expires: new Date(Date.now() + 25892000000),
+                expires: expiryDate,
                 httpOnly: true
             });
 
