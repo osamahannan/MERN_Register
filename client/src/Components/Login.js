@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { UserContext } from "../App";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { API_URI } from '../constants/apiConfig';
+import { baseUrl } from '../constants/apiConfig';
 
 const Login = () => {
 
@@ -19,11 +19,12 @@ const Login = () => {
 
         e.preventDefault();
 
-        const res = await fetch(`${API_URI}/signin`, {
+        const res = await fetch(`${baseUrl}/signin`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
+            credentials: "include",
             body: JSON.stringify({
                 email, password
             })
@@ -46,9 +47,10 @@ const Login = () => {
                 position: "top-center",
                 autoClose: 2000
             });
-            setTimeout(() => {
-                history.push('/');
-            }, 2000);
+            history.push('/');
+            // setTimeout(() => {
+            //     history.push('/');
+            // }, 2000);
         }
 
     }

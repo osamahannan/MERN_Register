@@ -3,7 +3,7 @@ import signpic from '../assets/signup.png';
 import { Link, useHistory } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { API_URI } from '../constants/apiConfig';
+import { baseUrl } from '../constants/apiConfig';
 
 const Signup = () => {
 
@@ -26,7 +26,7 @@ const Signup = () => {
 
         const { name, email, phone, work, password, cpassword } = user;
 
-        const res = await fetch(`${API_URI}/register`, {
+        const res = await fetch(`${baseUrl}/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

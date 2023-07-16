@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import profilepic from '../assets/profile.jpg';
 import { useHistory } from 'react-router-dom';
-import { API_URI } from '../constants/apiConfig';
+import { baseUrl } from '../constants/apiConfig';
 
 const About = () => {
 
@@ -16,7 +16,7 @@ const About = () => {
 
     const callAboutPage = async () => {
         try {
-            const res = await fetch(`${API_URI}/about`, {
+            const res = await fetch(`${baseUrl}/about`, {
                 method: "GET",
                 headers: {
                     Accept: "application/json",

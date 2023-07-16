@@ -1,2 +1,1 @@
-export const API_URI = "https://mern-register.vercel.app"
-// export const API_URI = ""
+export const baseUrl = process.env.API_URL || "http://localhost:8000"

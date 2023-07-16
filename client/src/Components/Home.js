@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { UserContext } from "../App";
-import { API_URI } from '../constants/apiConfig';
-// import { authHeader } from '../constants/header';
+import { baseUrl } from '../constants/apiConfig';
+import { authHeader } from '../constants/header';
 
 const Home = () => {
 
@@ -12,9 +12,10 @@ const Home = () => {
     useEffect(() => {
         const callHomePage = async () => {
             try {
-                const res = await fetch(`${API_URI}/getData`, {
-                    method: "GET"
-                    // headers: authHeader()
+                const res = await fetch(`${baseUrl}/getData`, {
+                    method: "GET",
+                    headers: authHeader(),
+                    credentials: "include"
                 });
 
                 const data = await res.json();

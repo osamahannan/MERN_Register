@@ -3,8 +3,10 @@ const dotenv = require('dotenv');
 const cookieparser = require("cookie-parser");
 const express = require('express');
 const app = express();
-app.use(cors({ origin: "*" }));
-app.options("*", cors());
+app.use("*", cors({
+    origin: true,
+    credentials: true
+}))
 
 // middelwares
 // app.options("*", cors());

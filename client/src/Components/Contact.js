@@ -4,7 +4,7 @@ import emailpic from '../assets/email.png';
 import addresspic from '../assets/address.png';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { API_URI } from '../constants/apiConfig';
+import { baseUrl } from '../constants/apiConfig';
 
 const Contact = () => {
 
@@ -14,11 +14,12 @@ const Contact = () => {
 
     const callContactPage = async () => {
         try {
-            const res = await fetch(`${API_URI}/getData`, {
+            const res = await fetch(`${baseUrl}/getData`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
                 },
+                credentials: "include"
             });
 
             const data = await res.json();
@@ -51,7 +52,7 @@ const Contact = () => {
 
         const { name, email, phone, message } = userData;
 
-        const res = await fetch(`${API_URI}/contact`, {
+        const res = await fetch(`${baseUrl}/contact`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

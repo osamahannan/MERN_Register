@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { UserContext } from "../App";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { API_URI } from '../constants/apiConfig';
+import { baseUrl } from '../constants/apiConfig';
 
 const Logout = () => {
 
@@ -13,7 +13,7 @@ const Logout = () => {
 
     //Promises
     useEffect(() => {
-        fetch(`${API_URI}/logout`, {
+        fetch(`${baseUrl}/logout`, {
             method: "GET",
             headers: {
                 Accept: "application/json",
