@@ -29,7 +29,9 @@ const Login = () => {
             })
         });
 
-        const data = res.json();
+        const data = await res.json();
+
+        console.log("data =", data)
 
         if (res.status === 422 || !data) {
             toast.warn("Please fill all the details", {

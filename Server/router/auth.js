@@ -60,10 +60,12 @@ router.post('/signin', async (req, res) => {
             return res.status(422).json({ error: "please fill all the details" })
         }
 
-        console.log("email =", email , "passwors =", password)
+        console.log("email =", email , ",", "password =", password)
+        console.log("it came before userLogin")
 
         // const userLogin = await User.findOne({ email: email });
         const userLogin = await User.findOne({ email: email });
+        console.log("it came after userLogin")
         console.log("userLogin=", userLogin)
 
         if (userLogin) {
@@ -80,6 +82,8 @@ router.post('/signin', async (req, res) => {
                 expires: expiryDate,
                 httpOnly: true
             });
+
+            console.log("it came cookie set userLogin")
 
             if (!isMatch) {
 
