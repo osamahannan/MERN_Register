@@ -4,6 +4,7 @@ import { UserContext } from "../App";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { baseUrl } from '../constants/apiConfig';
+import { authHeader } from '../constants/header';
 
 const Logout = () => {
 
@@ -15,10 +16,7 @@ const Logout = () => {
     useEffect(() => {
         fetch(`${baseUrl}/logout`, {
             method: "GET",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
-            },
+            headers: authHeader(),
             credentials: "include"
         }).then((res) => {
             dispatch({ type: "USER", payload: false })

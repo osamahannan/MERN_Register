@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import profilepic from '../assets/profile.jpg';
 import { useHistory } from 'react-router-dom';
 import { baseUrl } from '../constants/apiConfig';
+import { authHeader } from '../constants/header';
 
 const About = () => {
 
@@ -18,10 +19,11 @@ const About = () => {
         try {
             const res = await fetch(`${baseUrl}/about`, {
                 method: "GET",
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json"
-                },
+                headers: authHeader(),
+                // headers: {
+                //     Accept: "application/json",
+                //     "Content-Type": "application/json"
+                // },
                 credentials: "include"
             });
 

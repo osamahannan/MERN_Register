@@ -5,6 +5,7 @@ import addresspic from '../assets/address.png';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { baseUrl } from '../constants/apiConfig';
+import { authHeader } from '../constants/header';
 
 const Contact = () => {
 
@@ -16,9 +17,7 @@ const Contact = () => {
         try {
             const res = await fetch(`${baseUrl}/getData`, {
                 method: "GET",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: authHeader(),
                 credentials: "include"
             });
 
@@ -54,9 +53,8 @@ const Contact = () => {
 
         const res = await fetch(`${baseUrl}/contact`, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: authHeader(),
+            credentials: "include",
             body: JSON.stringify({
                 name, email, phone, message
             })

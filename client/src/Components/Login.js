@@ -5,6 +5,7 @@ import { UserContext } from "../App";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { baseUrl } from '../constants/apiConfig';
+import { authHeader } from '../constants/header';
 
 const Login = () => {
 
@@ -21,9 +22,7 @@ const Login = () => {
 
         const res = await fetch(`${baseUrl}/signin`, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: authHeader(),
             credentials: "include",
             body: JSON.stringify({
                 email, password

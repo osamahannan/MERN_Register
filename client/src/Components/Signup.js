@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { baseUrl } from '../constants/apiConfig';
+import { authHeader } from '../constants/header';
 
 const Signup = () => {
 
@@ -28,9 +29,8 @@ const Signup = () => {
 
         const res = await fetch(`${baseUrl}/register`, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: authHeader(),
+            credentials: "include",
             body: JSON.stringify({
                 name, email, phone, work, password, cpassword
             })
