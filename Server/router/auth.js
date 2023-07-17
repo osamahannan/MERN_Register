@@ -80,7 +80,7 @@ router.post('/signin', async (req, res) => {
             // console.log(token);
             res.cookie("jwtoken", token, {
                 expires: expiryDate,
-                httpOnly: true
+                // httpOnly: true
             });
 
             console.log("it came cookie set userLogin")
