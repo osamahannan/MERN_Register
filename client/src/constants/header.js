@@ -6,7 +6,7 @@ export const authHeader = () => {
     if (userAccessToken) {
         return {
             "Content-Type": "application/json",
-            Authorization: "JWT " + userAccessToken,
+            Authorization: "Bearer " + userAccessToken,
         };
     } else {
         return { "Content-Type": "application/json" };
