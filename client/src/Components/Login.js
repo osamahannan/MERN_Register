@@ -48,10 +48,10 @@ const Login = () => {
                 position: "top-center",
                 autoClose: 2000
             });
-            history.push('/');
-            // setTimeout(() => {
-            //     history.push('/');
-            // }, 2000);
+            // history.push('/');
+            setTimeout(() => {
+                history.push('/');
+            }, 2000);
         }
 
     }
