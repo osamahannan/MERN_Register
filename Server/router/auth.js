@@ -141,7 +141,7 @@ router.post('/contact', authenticate, async (req, res) => {
 
 // Logout Page
 router.get('/logout', (req, res) => {
-    res.clearCookie('jwtoken', { path: '/' });
+    res.clearCookie('jwtoken', { path: '/' }, {sameSite: "none"});
     res.status(200).send("User Logout Successful");
 })
 
