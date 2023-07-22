@@ -60,7 +60,7 @@ router.post('/signin', async (req, res) => {
             return res.status(422).json({ error: "please fill all the details" })
         }
 
-        console.log("email =", email , ",", "password =", password)
+        console.log("email =", email, ",", "password =", password)
         console.log("it came before userLogin")
 
         // const userLogin = await User.findOne({ email: email });
@@ -141,7 +141,7 @@ router.post('/contact', authenticate, async (req, res) => {
 
 // Logout Page
 router.get('/logout', (req, res) => {
-    res.clearCookie('jwtoken', { path: '/', sameSite: "none", secure: "false" });
+    res.clearCookie('jwtoken', { path: '/', sameSite: "none", secure: true, httpOnly: true, });
     res.status(200).send("User Logout Successful");
 })
 
